@@ -9,7 +9,7 @@
   from STAR (see page 14 of the [manual](https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf))
   are 1-indexed with right bound of the interval being inclusive. Bedtools (and PyBedTools) are able to correctly parse
   different formats, but we need to keep the
-  differences in mind when processing the files by different tools (custom aws / python / etc. scripts).
+  differences in mind when processing the files by different tools (custom awk / python / etc. scripts).
 
 ## Creating .bed file with introns from reference genome
 
