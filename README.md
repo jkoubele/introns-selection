@@ -5,8 +5,11 @@ For running the python code, please install the requirement by ```pip install -r
 You also need to have [bedtools installed](https://bedtools.readthedocs.io/en/latest/content/installation.html) and added to PATH.
 ## Creating .bed file with introns from reference genome
  - The code is adapted from Ricfrid's [intership project](https://github.com/dirfcir/Pol_II_RvdM), which also refers to the original [Poll II speed project](https://github.com/beyergroup/ElongationRate/tree/main).
- - The scripts get_intron_from_gtf_file.sh and get_intron_from_gtf_file.py should yield equivalent results.
+ - The scripts [get_intron_from_gtf_file.sh](./get_introns_from_gtf_file.sh) and [get_introns_from_gtf_file.py](./get_introns_from_gtf_file.py) should yield equivalent results.
  - Please note that reference .gtf file may differ in naming convention - for example, the UTR may be recorded as '' 
 
+## Finding nested introns
+ - Finding nested introns is implemented in the notebook [find_nested_introns.ipynb](./find_nested_introns.ipynb)
+ - Example of SJ data can be downloaded from this [link](https://drive.google.com/file/d/1MnhSRSMya5N33H6FdDk2OI97UUNcao1m/view?usp=sharing).
 
 
