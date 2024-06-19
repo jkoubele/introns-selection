@@ -17,7 +17,8 @@
   the original [Poll II speed project](https://github.com/beyergroup/ElongationRate/tree/main).
 - The scripts [get_intron_from_gtf_file.sh](./get_introns_from_gtf_file.sh)
   and [get_introns_from_gtf_file.py](./get_introns_from_gtf_file.py) should yield equivalent results.
-- Please note that reference .gtf file may differ in naming convention - for example, the UTR may be recorded as ''
+- Please note that reference .gtf file may differ in naming convention - for example, the UTRs may be recorded as 'three_prime_utr' and 'five_prime_utr' instead of 'UTR'.
+If that's the case, the code need to be modified accordingly.
 
 ## Finding nested introns
 
