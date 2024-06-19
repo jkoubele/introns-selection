@@ -160,7 +160,7 @@ example_nested_introns
 # We may find nested SJ inside different reference introns, if we wish to apply different filtering logic on the nested and 'outside' introns.
 # We may e.g. find SJ that are nested inside introns from the reference genome:
 
-reference_introns = load_bed_file_as_dataframe('./data/introns_after_merge.bed')
+reference_introns = load_bed_file_as_dataframe('./reference_genome/introns.bed')
 reference_introns = find_nested_introns(reference_introns, sj_aggregated)
 
 reference_introns_with_nested_sj = reference_introns[reference_introns['has_nested_intron']]
