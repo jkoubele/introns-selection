@@ -1,6 +1,6 @@
 # Script to extract and sort genomic features (exons, introns, and UTRs) from a GTF file.
 
-gtf_input=${1:-"/cellfile/datapublic/jkoubele/introns-selection/data/gencode.vM10.primary_assembly.annotation.gtf"}
+gtf_input=${1:-"./reference_genome/gencode.vM10.primary_assembly.annotation.gtf"}
 output_folder=${2:-$(dirname "$gtf_input")}
 input_file_full_name=$(basename "$gtf_input")
 input_file_name="${input_file_full_name%.*}"
