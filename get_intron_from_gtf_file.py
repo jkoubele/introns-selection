@@ -1,4 +1,4 @@
-from pybedtools import BedTool
+from pybedtools import BedTool, Interval
 from tqdm import tqdm
 from collections import Counter
 from pathlib import Path
@@ -23,9 +23,14 @@ exons = BedTool([record for record in tqdm(gtf_records, desc='Extracting exons')
 utr = BedTool(
     [record for record in tqdm(gtf_records, desc="Extracting UTR") if record.fields[2] == 'UTR']).sort()
 introns_before_merge = genes.subtract(exons, s=True).subtract(utr, s=True).sort()
+introns_before_merge = BedTool([Interval(chrom=x.chrom, start=x.start, end=x.end,
+                                         name=x.fields[-1].replace(',', ' ').split()[1][1:-2], score='.', strand = x.strand) 
+             for x in tqdm(introns_before_merge)])
 
-introns_after_merge = introns_before_merge.merge(s=True) #, c=[1], o='distinct')
-introns_after_merge = introns_before_merge.merge(s=True, c=[3,6,7],o='distinct')
+introns_before_merge.saveas(data_folder /'introns_before_merge.bed')
+
+# introns_after_merge = introns_before_merge.merge(s=True) #, c=[1], o='distinct')
+introns_after_merge = introns_before_merge.merge(s=True, c=[4,5,6],o='distinct').sort()
 
 introns_after_merge.saveas(data_folder /'introns_after_merge.bed')
 
